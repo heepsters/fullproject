@@ -1,0 +1,6 @@
+<%= form_for [@barber, @opening] do |f| %> 
+	<%= f.hidden_field :barber_id, value: @barber.id %>
+	<%= f.label :opening %>
+	<%= f.datetime_select :opening %>
+	<%= f.submit %>
+<% end -%>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Barbers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @barbers.each do |barber| %>
+      <tr>
+        <!-- add image tag and link to profile here -->
+        <td><%= link_to barber.first_name, barber_path(barber) %></td>
+        <td><%= link_to 'Edit', edit_barber_path(barber) %></td>
+        <td><%= link_to 'Destroy', barber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Barber', new_barber_path %>

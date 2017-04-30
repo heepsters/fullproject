@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  opening: 2017-04-28 12:33:37
+  barber: one
+
+two:
+  opening: 2017-04-28 12:33:37
+  barber: two

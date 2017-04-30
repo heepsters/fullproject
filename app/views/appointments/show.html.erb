@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<h1>Reserve Now</h1>
+<p>
+	<strong>Barber:</strong>
+	<%= @appointment.barber.first_name %>
+</p>
+<p>
+	<strong>Day:</strong>
+	<%= @appointment.appointment.strftime("%A, %B %d, %Y - %I:%M %P") %>
+</p>
+<p>
+<strong>Service</strong>
+	<%= form_for @appointment do |f| %>
+		<% @services.each do |service| %>
+			<div class="field">
+				<span><%= service.service_type %></span> 
+		        <span><%= service.cost %></span>
+		        <span><%= check_box_tag service.service_type, service.cost %></span>
+		    </div>
+	    <% end %>
+    <% end %>
+</p>
+<h3>
+	<%= link_to 'Reserve', new_charge_path %>
+</h3> 
+<br>
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', barber_path(@barber) %> |

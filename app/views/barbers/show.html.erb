@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<h1>
+	<%= @barber.first_name %>
+</h1>
+<p>
+  <strong>Last name:</strong>
+  <%= @barber.last_name %>
+</p>
+<p>
+  <strong>Phone:</strong>
+  <%= @barber.phone %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @barber.email %>
+</p>
+<h2>Current Openings</h2>
+	<th></th>
+<!-- List all openings for this barber below -->
+<table>
+  <tbody>
+    <% @openings.each do |o| %>
+      <tr>
+        <td><%= o.opening.strftime("%A, %B %d, %Y - %I:%M %P") %></td>
+        <td><%= link_to 'Select', appointments_path(barber_id: o.barber.id, client_id: 1, opening_id: o.id), method: :post %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<%= link_to 'Add New Opening', new_barber_opening_path(@barber) %> |
+<%= link_to 'Back', barbers_path %>

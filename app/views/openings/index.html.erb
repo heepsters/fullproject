@@ -1,0 +1,8 @@
+<h1>All Openings</h1>
+<% @openings.each do |o| %>
+<ul>
+	<li><%= o.barber.first_name %></li>
+	<li><%= o.opening %></li>
+	<li><%= link_to 'Select', appointments_path(barber_id: o.barber.id, client_id: 1, opening_id: o.id), method: :post %></li>
+</ul>
+<% end %>
