@@ -1,36 +1,36 @@
 <p id="notice"><%= notice %></p>
+<% if client_signed_in? %>
+  <p>
+    <%= link_to 'My Profile', client_path(id: current_client) %>
+    <%= link_to 'My History', history_path(id: current_client), class: "pull-right" %>
+  </p> 
+<% end -%>
 
-<h1>Barbers</h1>
+<h3>CHOOSE YOUR BARBER</h3>
 
 <table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
   <tbody>
     <% @barbers.each do |barber| %>
       <tr>
         <!-- add image tag and link to profile here -->
         <td><%= link_to barber.first_name, barber_path(barber) %></td>
+        <!-- If User is Admin ONLY -->
         <td><%= link_to 'Edit', edit_barber_path(barber) %></td>
         <td><%= link_to 'Destroy', barber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
 <br>
+<div class="step_1">
+  <h4><%= link_to "Choose Barber", barbers_path %></h4>
+</div>
+<div class="step_2">
+  <h4>Choose Schedule</h4>
+</div>
+<div class="step_3">
+  <h4>Reserve</h4>
+</div>
+
+<!-- If user is Admin ONLY -->
 <%= link_to 'New Barber', new_barber_path %>
-<br>
-<br>
-
-<% if client_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_client_session_path, :method => :delete) %>        
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_client_session_path)  %>  
-  </li>
-<% end %>

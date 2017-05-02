@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+<p>
+	<%= link_to 'Back', barbers_path %>
+</p>
+<table>
+<h1>MY HISTORY</h1>
+	<tbody>
+		<% @appointments.each do |appointment| %>
+			<tr>
+				<td><%= appointment.barber.first_name %></td>
+				<td><%= appointment.appointment.strftime("%A, %B %d, %Y - %I:%M %P") %></td>
+				<td><%= link_to 'Select', appointment %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

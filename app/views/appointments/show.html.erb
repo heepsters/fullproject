@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<% if client_signed_in? %>
+  <%= link_to 'My Profile', client_path(id: current_client) %>
+<% end -%>
 <h1>Reserve Now</h1>
 <p>
 	<strong>Barber:</strong>
@@ -26,5 +29,15 @@
 <h3>
 	<%= link_to 'Reserve', new_charge_path %>
 </h3> 
+<br>
+<div class="step_1">
+  <h4><%= link_to "Choose Barber", barbers_path %></h4>
+</div>
+<div class="step_2">
+  <h4><%= link_to "Choose Schedule", barber_path %></h4>
+</div>
+<div class="step_3">
+  <h4>Reserve</h4>
+</div>
 <br>
 <%= link_to 'Back', barber_path(@barber) %> 

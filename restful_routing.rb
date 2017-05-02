@@ -61,6 +61,7 @@ cancel_client_registration GET    /clients/cancel(.:format)                  dev
                            PATCH  /clients/:id(.:format)                     clients#update
                            PUT    /clients/:id(.:format)                     clients#update
                            DELETE /clients/:id(.:format)                     clients#destroy
+                   history GET    /clients/:id/history(.:format)             clients#history
                    charges GET    /charges(.:format)                         charges#index
                            POST   /charges(.:format)                         charges#create
                 new_charge GET    /charges/new(.:format)                     charges#new

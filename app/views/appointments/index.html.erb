@@ -7,6 +7,7 @@
     <tr>
       <th>Barber</th>
       <th>Appointment</th>
+      <th>Client</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= appointment.barber.first_name %></td>
         <td><%= appointment.appointment.strftime("%A, %B %d, %Y - %I:%M %P") %></td>
+        <td><%= appointment.client.first_name %></td>
         <td><%= link_to 'Select', appointment %></td>
       </tr>
     <% end %>
