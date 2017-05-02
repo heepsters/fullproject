@@ -14,7 +14,7 @@ class OpeningsController < ApplicationController
   end
 
   def show
-    @openings = Barber.find(params[:id]).openings
+    @openings = Barber.find(params[:id]).Client.find(params[:id]).openings
   end
 
   def edit
@@ -29,7 +29,7 @@ class OpeningsController < ApplicationController
 private
 
   def opening_params
-    params.require(:opening).permit(:opening, :barber_id)
+    params.require(:opening).permit(:opening, :barber_id, :client_id)
   end
 
 end

@@ -3,6 +3,9 @@ class BarbersController < ApplicationController
 
   # GET /barbers
   # GET /barbers.json
+  def home
+  end
+  
   def index
     @barbers = Barber.all
     @appointments = Appointment.all

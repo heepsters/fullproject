@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Heepstest</title>
+    <title>Redmonds Barbershop</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,14 @@
   </head>
 
   <body>
-    <%= yield %>
+  	<div class="container">
+  		
+
+	    <%= yield %>
+	    <footer id="footer">
+	      <p>&copy 2017 Redmond's Barbershop 159 East 800 South, Salt Lake City, UT 84111</p>
+	    </footer>
+    </div>
+
   </body>
 </html>

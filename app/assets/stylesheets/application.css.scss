@@ -1,0 +1,186 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import 'bootstrap';
+@import 'bootstrap-datetimepicker';
+html {
+	height:100%;
+	margin:0;
+	padding:0;
+}
+body {
+	background-color: #fff;
+	height:100%;
+	margin:0;
+	padding:0;
+}
+#wrapper {
+	min-height: 100%;
+	position: relative;
+}
+nav.navbar.navbar-default.navbar-fixed-top {
+	background-color: rgba(224, 236, 255, 0);
+	a {
+		color:#fff;
+		font-weight: 500;
+		font-size: 15px;
+	}
+	a:hover {
+		color: #234;
+	}
+}
+.page_logo {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	text-align: center;
+	img {
+		width: 100px;
+		margin-top: 20px;
+	}
+}
+footer#footer {
+	position: absolute;
+	bottom: -170px;
+	left: 0px;
+	width: 100%;
+	color: #fff;
+	p {
+		padding-top: 75px;
+		padding-bottom: 75px;
+		text-align: center;
+		background-color: #222;
+		width: 100%;
+		margin: 0;
+	}
+}
+.btn-lg, .btn-group-lg > .btn {
+    padding: 20px 40px;
+    font-size: 20px;
+}
+.logoimg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 731px;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.8);
+	img {
+		width: 370px;
+		margin: 13em 0 2em;
+	}
+}
+.backgroundpic {
+	height: 641px;
+	width: 100%;
+	text-align: center;
+}
+.backgroundpic img {
+	position: absolute;
+	width: 100%;
+	margin: 0;
+	border: 0;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	height: 801px;
+}
+
+h4#homelink.text-center{
+	margin: 0;
+	a.btn.btn-default.btn-lg {
+		border-radius: 0;
+		border: 1px solid #fff;
+		background-color: inherit;
+		color: #fff;
+		font-size: 25px;
+		padding: 10px 22px;
+	}
+}
+a.btn.btn-default.btn-lg:hover {
+	background-color: rgba(226, 20, 20, 0.65) !important;
+}
+#notice-wrapper {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+	background: rgba(135, 216, 211, 0.65);
+	.alert, .notice {
+		padding: 2.8rem 0;
+		text-align: center;
+		margin: 0;
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: #fff;
+		letter-spacing: 1px;
+		border-radius-bottom: 15px;
+	}
+	button,
+	button:active,
+	button:focus, 
+	button:hover,
+	.btn,
+	.btn:active, 
+	.btn:focus, 
+	.btn:hover{   
+	    outline:none !important;
+	    margin-top: 20px;
+	    margin-right: 5px;
+	    color: #fff;
+	    font-size: 900;
+	    font-weight: 900;
+	    z-index: -1;
+
+	}
+}
+input#user_email,input#user_password,input#user_password_confirmation {
+	width: 300px;
+	height: 40px;
+	border-radius: 5px;
+	padding: 0 10px;
+	color: #333;
+}
+.sign_wrapper {
+	color: #fff;
+	font-size: 15px;
+	width: 400px;
+	padding: 1em 1em;
+	margin: 10em 33%;
+	background-color: rgba(206, 122, 122, 0.75);
+	border-radius: 5px;
+}
+.sign_wrapper h2 {
+	color: #fff;
+}
+#sign_btn.actions input {
+	width: 200px;
+	height: 40px;
+	border-radius: 10px;
+	outline: none;
+	background-color: rgba(129, 244, 41, 0.8);
+	margin-top: 20px;
+	margin-bottom: 20px;
+	color: #333;
+}
+.select_menu {
+	background-color: #fff;
+	margin-top: 10em;
+	padding: 20px 0;
+}

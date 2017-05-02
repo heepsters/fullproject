@@ -12,17 +12,19 @@
 <strong>Service</strong>
 	<%= form_for @appointment do |f| %>
 		<% @services.each do |service| %>
-			<div class="field">
+			<div class="field" id="style_cut">
 				<span><%= service.service_type %></span> 
-		        <span><%= service.cost %></span>
-		        <span><%= check_box_tag service.service_type, service.cost %></span>
+		        <span><%= number_to_currency(service.cost) %></span>
+		        <span><%= check_box_tag service.service_type, service.cost  %></span>
 		    </div>
 	    <% end %>
+	   <h5>
+	   		Total Due : <h5 class="totals"> 0 </h5>
+	   </h5> 
     <% end %>
 </p>
 <h3>
 	<%= link_to 'Reserve', new_charge_path %>
 </h3> 
 <br>
-<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
-<%= link_to 'Back', barber_path(@barber) %> |
+<%= link_to 'Back', barber_path(@barber) %> 

@@ -22,11 +22,16 @@
     <% @openings.each do |o| %>
       <tr>
         <td><%= o.opening.strftime("%A, %B %d, %Y - %I:%M %P") %></td>
-        <td><%= link_to 'Select', appointments_path(barber_id: o.barber.id, client_id: 1, opening_id: o.id), method: :post %></td>
+      <% if client_signed_in? %>
+        <td><%= link_to 'Select', appointments_path(barber_id: o.barber.id, client_id: current_client, opening_id: o.id), method: :post %></td>
+      <% else %>
+        <td><%= link_to 'Sign In', new_client_registration_path %></td>
+      <% end -%>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
+<!-- if current user is barber ONLY allow barber to add OWN Openings -->
 <%= link_to 'Add New Opening', new_barber_opening_path(@barber) %> |
 <%= link_to 'Back', barbers_path %>
