@@ -2,6 +2,9 @@
 <% if client_signed_in? %>
   <%= link_to 'My Profile', client_path(id: current_client) %>
 <% end -%>
+<div class="page_logo">
+	<%= image_tag("redslogo.png") %>
+</div>
 <h1>Reserve Now</h1>
 <p>
 	<strong>Barber:</strong>

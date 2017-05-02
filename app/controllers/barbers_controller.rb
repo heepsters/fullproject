@@ -25,7 +25,10 @@ class BarbersController < ApplicationController
   # GET /barbers/1/edit
   def edit
   end
-
+  
+  def history
+    @appointments = @barbers.appointments
+  end
   # POST /barbers
   # POST /barbers.json
   def create
@@ -74,6 +77,6 @@ class BarbersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def barber_params
-      params.require(:barber).permit(:first_name, :last_name, :phone, :email)
+      params.require(:barber).permit(:first_name, :last_name, :phone, :email, :avatar)
     end
 end
