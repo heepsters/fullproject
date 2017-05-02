@@ -1,5 +1,13 @@
+GIT
+  remote: git://github.com/Nerian/bootstrap-datepicker-rails.git
+  revision: 862e5ec85ee2da7cc8f893d6d07050cb0c1131b0
+  specs:
+    bootstrap-datepicker-rails (1.6.4.1)
+      railties (>= 3.0)
+
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actioncable (5.0.2)
       actionpack (= 5.0.2)
@@ -39,7 +47,17 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.4)
+    autoprefixer-rails (6.7.7.2)
+      execjs
+    bcrypt (3.1.11)
     bindex (0.5.0)
+    bootstrap (4.0.0.alpha6)
+      autoprefixer-rails (>= 6.0.3)
+      sass (>= 3.4.19)
+    bootstrap-sass (3.2.0.2)
+      sass (~> 3.2)
+    bootstrap3-datetimepicker-rails (4.14.30)
+      momentjs-rails (>= 2.8.1)
     builder (3.2.3)
     byebug (9.0.6)
     coffee-rails (4.2.1)
@@ -50,6 +68,12 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
+    devise (4.2.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 5.1)
+      responders
+      warden (~> 1.2.3)
     erubis (2.7.0)
     execjs (2.7.0)
     faraday (0.12.1)
@@ -78,21 +102,14 @@ GEM
     mime-types-data (3.2016.0521)
     mini_portile2 (2.1.0)
     minitest (5.10.1)
-    monetize (1.6.0)
-      money (~> 6.8)
-    money (6.8.4)
-      i18n (>= 0.6.4, < 0.9)
-      sixarm_ruby_unaccent (>= 1.1.1, < 2)
-    money-rails (1.8.0)
-      activesupport (>= 3.0)
-      monetize (~> 1.6.0)
-      money (~> 6.8.1)
-      railties (>= 3.0)
+    momentjs-rails (2.17.1)
+      railties (>= 3.1)
     multi_json (1.12.1)
     multipart-post (2.0.0)
     nio4r (2.0.0)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
+    orm_adapter (0.5.0)
     puma (3.8.2)
     rack (2.0.1)
     rack-test (0.6.3)
@@ -109,6 +126,7 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 5.0.2)
       sprockets-rails (>= 2.0.0)
+    rails-assets-tether (1.4.0)
     rails-dom-testing (2.0.2)
       activesupport (>= 4.2.0, < 6.0)
       nokogiri (~> 1.6)
@@ -124,6 +142,8 @@ GEM
     rb-fsevent (0.9.8)
     rb-inotify (0.9.8)
       ffi (>= 0.5.0)
+    responders (2.3.0)
+      railties (>= 4.2.0, < 5.1)
     restful_routing (1.1.2)
     sass (3.4.23)
     sass-rails (5.0.6)
@@ -132,7 +152,6 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    sixarm_ruby_unaccent (1.1.1)
     spring (2.0.1)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -158,6 +177,8 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
+    warden (1.2.7)
+      rack (>= 1.0)
     web-console (3.5.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -171,14 +192,20 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap (~> 4.0.0.alpha6)
+  bootstrap-datepicker-rails!
+  bootstrap-sass (~> 3.2.0)
+  bootstrap3-datetimepicker-rails (~> 4.14.30)
   byebug
   coffee-rails (~> 4.2)
+  devise
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
-  money-rails (~> 1)
+  momentjs-rails (>= 2.9.0)
   puma (~> 3.0)
   rails (~> 5.0.2)
+  rails-assets-tether (>= 1.3.3)!
   restful_routing
   sass-rails (~> 5.0)
   spring
