@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 	
 	devise_for :clients
+
 	devise_for :views
   
 	resources :barbers do
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
 	
 	resources :appointments 
 	resources :clients
+	get '/clients/:id/history' => 'clients#history', as: :history
 	resources :charges
 	resources :services
 

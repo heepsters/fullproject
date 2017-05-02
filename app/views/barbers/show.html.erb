@@ -1,4 +1,10 @@
 <p id="notice"><%= notice %></p>
+<% if client_signed_in? %>
+  <p>
+    <%= link_to 'My Profile', client_path(id: current_client) %>
+    <%= link_to 'My History', history_path(id: current_client), class: "pull-right" %>
+  </p> 
+<% end -%>
 <h1>
 	<%= @barber.first_name %>
 </h1>
@@ -32,6 +38,15 @@
   </tbody>
 </table>
 <br>
+<div class="step_1">
+  <h4><%= link_to "Choose Barber", barbers_path %></h4>
+</div>
+<div class="step_2">
+  <h4><%= link_to "Choose Schedule", barber_path %></h4>
+</div>
+<div class="step_3">
+  <h4>Reserve</h4>
+</div>
 <!-- if current user is barber ONLY allow barber to add OWN Openings -->
 <%= link_to 'Add New Opening', new_barber_opening_path(@barber) %> |
 <%= link_to 'Back', barbers_path %>
