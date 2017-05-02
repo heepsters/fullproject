@@ -5,18 +5,29 @@
     <%= link_to 'My History', history_path(id: current_client), class: "pull-right" %>
   </p> 
 <% end -%>
+<% if barber_signed_in? %>
+  <p>
+    <%= link_to 'My Profile', barber_path(id: current_barber) %>
+    <%= link_to 'My History', clients_path(id: current_barber), class: "pull-right" %>
+  </p> 
+<% end -%>
 
-<h3>CHOOSE YOUR BARBER</h3>
-
+<div class="page_logo">
+  <%= image_tag("redslogo.png") %>
+</div>
+<h3 class="banner">CHOOSE YOUR BARBER</h3>
 <table>
   <tbody>
     <% @barbers.each do |barber| %>
       <tr>
         <!-- add image tag and link to profile here -->
+        <td class="field"><%= image_tag barber.avatar.url(:thumb) %></td>
         <td><%= link_to barber.first_name, barber_path(barber) %></td>
         <!-- If User is Admin ONLY -->
+        <% if barber_signed_in? %>
         <td><%= link_to 'Edit', edit_barber_path(barber) %></td>
         <td><%= link_to 'Destroy', barber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -31,6 +42,3 @@
 <div class="step_3">
   <h4>Reserve</h4>
 </div>
-
-<!-- If user is Admin ONLY -->
-<%= link_to 'New Barber', new_barber_path %>
