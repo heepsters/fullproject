@@ -1,11 +1,34 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
 <% if client_signed_in? %>
-  <%= link_to 'My Profile', client_path(id: current_client) %>
+  <p>
+    <%= link_to client_path(id: current_client) do %>
+      <%= fa_icon "user-circle-o 3x", class: "pull-left" %>
+    <% end -%>
+    <%= link_to history_path(id: current_client) do %>
+      <%= fa_icon "clock-o 3x", class: "pull-right" %>
+    <% end -%>
+  </p> 
 <% end -%>
+<% if barber_signed_in? %>
+  <p>
+    <%= link_to barber_path(id: current_barber) do %>
+      <%= fa_icon "user-circle-o 3x", class: "pull-left" %>
+    <% end -%>
+    <%= link_to clients_path(id: current_barber) do %>
+      <%= fa_icon "clock-o 3x", class: "pull-right" %>
+    <% end -%>
+  </p> 
+<% end %>
+</div>
+
 <div class="page_logo">
 	<%= image_tag("redslogo.png") %>
 </div>
-<h1>Reserve Now</h1>
+<h3 class="banner">LIKE WHAT YOU SEE?</h3>
+<p>
+  <%= image_tag @appointment.barber.avatar(:thumb) %>
+</p>
 <p>
 	<strong>Barber:</strong>
 	<%= @appointment.barber.first_name %>

@@ -13,18 +13,25 @@
  *= require_tree .
  *= require_self
  */
+@import "font-awesome";
 @import 'bootstrap';
 @import 'bootstrap-datetimepicker';
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 html {
 	height:100%;
 	margin:0;
 	padding:0;
 }
 body {
+	position: fixed;
+	width: 100%;
+	top: 0;
 	background-color: #fff;
 	height:100%;
 	margin:0;
 	padding:0;
+	font-family: 'Raleway', sans-serif;
+
 }
 #wrapper {
 	min-height: 100%;
@@ -54,7 +61,7 @@ nav.navbar.navbar-default.navbar-fixed-top {
 	}
 }
 .banner {
-	margin-top: 100px;
+	margin-top: 80px;
 	width: 100%;
 	padding: 10px 0;
 	background-color: #E93434;
@@ -82,26 +89,42 @@ footer#footer {
     font-size: 20px;
 }
 .logoimg {
-	position: absolute;
+	position: fixed;
+	width: 100%;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 731px;
+	height: 100%;
 	text-align: center;
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(74, 144, 266, 0.55);
 	img {
-		width: 370px;
-		margin: 13em 0 2em;
+		width: 190px;
+		margin: 5em 0 0;
 	}
 }
 .backgroundpic {
-	height: 641px;
 	width: 100%;
 	text-align: center;
+	top: 0;
 }
 .backgroundpic img {
-	position: absolute;
+	position: fixed;
+	height: 100%;
+	margin: 0;
+	border: 0;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	height: 801px;
+}
+.backgroundpic1 {
 	width: 100%;
+	text-align: center;
+	top: 0;
+	position: fixed;
+}
+.backgroundpic1 img {
+	position: fixed;
+	width: 1280px;
 	margin: 0;
 	border: 0;
 	top: 0;
@@ -111,19 +134,56 @@ footer#footer {
 }
 
 h4#homelink.text-center{
-	margin: 0;
-	a.btn.btn-default.btn-lg {
-		border-radius: 0;
-		border: 1px solid #fff;
-		background-color: inherit;
+	margin: 50px 0 0;
+	width: 100%;
+	padding: 20px 0;
+	background-color: rgba(255, 58, 58, 0.71);
+	font-size: 64px;
+	a {
 		color: #fff;
-		font-size: 25px;
-		padding: 10px 22px;
+	}
+	a:hover {
+		text-decoration: none;
+		background-color: none !important;
 	}
 }
-a.btn.btn-default.btn-lg:hover {
-	background-color: rgba(226, 20, 20, 0.65) !important;
+.btnlocation {
+	width: 100%;
+	text-align: center;
+	margin-top: 525px;
 }
+a.btn.btn-default.btn-lg {
+	/* Rectangle 2: */
+	background: rgba(10, 219, 73, 0.71);
+	width: 280px;
+	padding: 12px 0;
+	color: #fff;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+	border-radius: 100px;
+}
+a.btn.btn-default.btn-lg:hover {
+	background: rgba(255, 58, 58, 0.98);
+	border-radius: 10px;
+}
+.btnlocation1 {
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+	a.btn.btn-default.btn-lg {
+	/* Rectangle 2: */
+	background: #4A90E2;
+	width: 280px;
+	padding: 12px 0;
+	color: #fff;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+	border-radius: 100px;
+	}
+	a.btn.btn-default.btn-lg:hover {
+	background: rgba(255, 58, 58, 0.98);
+	border-radius: 10px;
+	}
+}
+
 #notice-wrapper {
 	position: absolute;
 	top: 0;

@@ -1,16 +1,26 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
 <% if client_signed_in? %>
   <p>
-    <%= link_to 'My Profile', client_path(id: current_client) %>
-    <%= link_to 'My History', history_path(id: current_client), class: "pull-right" %>
-  </p> 
+    <%= link_to client_path(id: current_client) do %>
+      <%= fa_icon "user-circle-o 3x", class: "pull-left" %>
+    <% end -%>
+    <%= link_to history_path(id: current_client) do %>
+      <%= fa_icon "clock-o 3x", class: "pull-right" %>
+    <% end -%>
+  </p>
 <% end -%>
 <% if barber_signed_in? %>
   <p>
-    <%= link_to 'My Profile', barber_path(id: current_barber) %>
-    <%= link_to 'My History', clients_path(id: current_barber), class: "pull-right" %>
+    <%= link_to barber_path(id: current_barber) do %>
+      <%= fa_icon "user-circle-o 3x", class: "pull-left" %>
+    <% end -%>
+    <%= link_to clients_path(id: current_barber) do %>
+      <%= fa_icon "clock-o 3x", class: "pull-right" %>
+    <% end -%>
   </p> 
-<% end -%>
+<% end %>
+</div>
 
 <div class="page_logo">
   <%= image_tag("redslogo.png") %>

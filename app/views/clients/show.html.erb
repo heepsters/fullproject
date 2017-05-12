@@ -1,28 +1,28 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-	<%= image_tag @client.avatar.url(:medium) %>
-</p>
-<p>
-  <strong>First name:</strong>
-  <%= @client.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @client.last_name %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @client.phone %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @client.email %>
-</p>
-
-<%= link_to 'Edit', edit_client_path(@client) %> |
-<%= link_to 'Back', barbers_path %> |
-<%= link_to('Logout', destroy_client_session_path, :method => :delete) %>      
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <%= link_to barbers_path do %>
+    <%= fa_icon "arrow-right 3x", class: "pull-right" %>
+  <% end -%>
+  <p>
+  	<%= image_tag @client.avatar.url(:medium) %>
+  </p>
+  <p>
+    <strong>First name:</strong>
+    <%= @client.first_name %>
+  </p>
+  <p>
+    <strong>Last name:</strong>
+    <%= @client.last_name %>
+  </p>
+  <p>
+    <strong>Phone:</strong>
+    <%= @client.phone %>
+  </p>
+  <p>
+    <strong>Email:</strong>
+    <%= @client.email %>
+  </p>
+  <br>
+  <%= link_to 'Edit', edit_client_path(@client) %> |
+  <%= link_to('Logout', destroy_client_session_path, :method => :delete, data: {confirm: "Are you sure?"}) %>      
+</div>
