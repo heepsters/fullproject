@@ -1,5 +1,9 @@
 <div class="backgroundpic1">
   <%= image_tag("slcnight.jpg") %>
+</div>
+<div class="logoimg1">
+  <%= image_tag("redslogo.png") %>
+
 <h2>Sign Up</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -8,16 +12,20 @@
   </div>
   <div class="field">
     <% if @minimum_password_length %>
-    <% end %><br />
+    <% end %>
     <%= f.password_field :password, autocomplete: "off", placeholder: :password %>
   </div>
-  <br>
+
   <div class="field">
     <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: :confirm_password %>
   </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-<%= render "devise/shared/links" %>
+
+  <div class="devise_link">
+    <%= render "devise/shared/links" %>
+  </div>
 </div>

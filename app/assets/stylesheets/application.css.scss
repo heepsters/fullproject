@@ -101,6 +101,23 @@ footer#footer {
 		margin: 5em 0 0;
 	}
 }
+.logoimg1 {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	height: 100%;
+	text-align: center;
+	color: #fff;
+	background-color: rgba(206, 122, 122, 0.75);
+	img {
+		width: 190px;
+		margin: 5em 0 0;
+	}
+}
+.logoimg1 h2 {
+	color: #fff;
+}
 .backgroundpic {
 	width: 100%;
 	text-align: center;
@@ -132,7 +149,44 @@ footer#footer {
 	z-index: -1;
 	height: 801px;
 }
-
+textarea, textarea.form-control, input.form-control, input[type=text], input[type=password], input[type=email], input[type=number], [type=text].form-control, [type=password].form-control, [type=email].form-control, [type=tel].form-control, [contenteditable].form-control {
+    padding: 5px 20px;
+    border: none;
+    border-radius: 100px;
+    -webkit-appearance: none;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0, 0.50);
+    font-size: 16px;
+    width: 350px;
+    text-align: center;
+    background-color: rgba(216, 216, 216, 0.9);
+    outline: none;
+}
+div.field, div.actions {
+    margin-bottom: 20px;
+}
+.actions input{
+    width: 350px;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 17px;
+    background-color: rgba(10, 219, 73, 0.9);
+    outline: none;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0, 0.50);
+}
+.devise_link a {
+	background: #50E3C2;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0, 0.50);
+    border-radius: 100px;
+    width: 300px;
+    padding: 7px 55px;
+    color: #fff;
+    font-size: 17px;
+    text-decoration: none;
+}
+.devise_link a:hover {
+	border-radius: 3px;
+	background-color: rgba(74, 144, 226, 0.8)
+}
 h4#homelink.text-center{
 	margin: 50px 0 0;
 	width: 100%;
