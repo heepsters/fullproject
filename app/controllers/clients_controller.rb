@@ -24,6 +24,7 @@ class ClientsController < ApplicationController
   end
   # GET /clients/1/edit
   def edit
+    
   end
 
   # POST /clients

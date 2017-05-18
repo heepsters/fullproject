@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<div class="container">
+<div class="profile_history">
 <% if client_signed_in? %>
   <p>
     <%= link_to client_path(id: current_client) do %>
@@ -29,21 +29,23 @@
 <table>
   <tbody>
     <% @barbers.each do |barber| %>
-      <tr>
-        <!-- add image tag and link to profile here -->
-        <td class="field"><%= image_tag barber.avatar.url(:thumb) %></td>
-        <td><%= link_to barber.first_name, barber_path(barber) %></td>
+
+       <!-- add image tag and link to profile here -->
+      <div class="center">
+        <td class="barbers_list"><%= image_tag barber.avatar.url(:medium), class: "barber_head" %><br>
+        <br>
+        <%= link_to barber.first_name, barber_path(barber) %></td>          
         <!-- If User is Admin ONLY -->
-        <% if barber_signed_in? %>
+      <% if barber_signed_in? %>
         <td><%= link_to 'Edit', edit_barber_path(barber) %></td>
         <td><%= link_to 'Destroy', barber, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-      </tr>
+      </div>
+      <% end %>
     <% end %>
   </tbody>
 </table>
 <br>
-<div class="step_1">
+<!-- <div class="step_1">
   <h4><%= link_to "Choose Barber", barbers_path %></h4>
 </div>
 <div class="step_2">
@@ -51,4 +53,4 @@
 </div>
 <div class="step_3">
   <h4>Reserve</h4>
-</div>
+</div> -->

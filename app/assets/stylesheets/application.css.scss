@@ -60,15 +60,59 @@ nav.navbar.navbar-default.navbar-fixed-top {
 		margin-top: 20px;
 	}
 }
-.banner {
-	margin-top: 80px;
+p#notice {
+	position: absolute;
+	bottom: 10px;
+	right: 5px;
+	width: 250px;
+	height: 50px;
+	color: rgb(66, 244, 223);
+}
+.profile_history {
+	position: absolute;
+	margin-top: 10px;
+	width: 100%;
+	padding: 0 20px;
+}
+h3.banner {
+	margin-top: 120px;
 	width: 100%;
 	padding: 10px 0;
 	background-color: #E93434;
 	color: #fff;
 	text-align: center;
-	box-shadow: 5px 2px 33px solid #000;
+	box-shadow: 1px 3px 5px #666;
 }
+table {
+	width: 100%;
+}
+tbody {
+	width: 100%;
+}
+tr {
+	display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    margin: auto;
+}
+tr td.barbers_list {
+	margin: 20px;
+	text-align: center;
+	a {
+		font-size: 19px;
+		color: #000;
+	}
+	.custom a:hover {
+		background-color: none;
+	}
+}
+img.barber_head {
+	width: 160px;
+	height: 160px;
+	border-radius: 100%;
+	box-shadow: 1px 3px 5px #666;
+}
+
 footer#footer {
 	position: absolute;
 	bottom: -170px;
@@ -112,7 +156,8 @@ footer#footer {
 	background-color: rgba(206, 122, 122, 0.75);
 	img {
 		width: 190px;
-		margin: 5em 0 0;
+		margin: 3em 0 0;
+
 	}
 }
 .logoimg1 h2 {
@@ -178,7 +223,7 @@ div.field, div.actions {
     box-shadow: 0 2px 4px 0 rgba(0,0,0, 0.50);
     border-radius: 100px;
     width: 300px;
-    padding: 7px 55px;
+    padding: 7px 35px;
     color: #fff;
     font-size: 17px;
     text-decoration: none;
@@ -237,7 +282,9 @@ a.btn.btn-default.btn-lg:hover {
 	border-radius: 10px;
 	}
 }
-
+.field input #client_avatar {
+	width: 100%;
+}
 #notice-wrapper {
 	position: absolute;
 	top: 0;
