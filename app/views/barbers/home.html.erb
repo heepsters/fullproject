@@ -2,19 +2,17 @@
 	<%= image_tag("backgroundshop.png") %>
 </div>
 <div class="logoimg">
-	<%= image_tag("redsREDlogo.png") %>
+	<%= image_tag("redslogo.png") %>
 	<h4 class="text-center" id="homelink" >
-		<%= link_to "View openeings", barbers_path, class: "btn btn-default btn-lg" %>
+		<%= link_to "CHECK OPENINGS!", barbers_path %>
 	</h4>
-
 </div>
-<% if client_signed_in? or barber_signed_in? %>
-  <h4 class="text-center" id="homelink">
-  	<%= link_to('Logout', destroy_client_session_path, class: "btn btn-default btn-lg", :method => :delete) %>        
-  </h4>
+<% if client_signed_in? or barber_signed_in? %>     
 <% else %>
-	<h4 class="text-center" id="homelink">
-		<%= link_to 'Sign Up', new_client_registration_path, class: "btn btn-default btn-lg" %>
-		<%= link_to 'Log In', new_client_session_path, class: "btn btn-default btn-lg" %>
-	</h4>
+	<div class="btnlocation">
+	<%= link_to 'Sign Up', new_client_registration_path, class: "btn btn-default btn-lg" %>
+	</div>
+	<div class="btnlocation1">
+	<%= link_to 'Log In', new_client_session_path, class: "btn btn-default btn-lg" %>
+	</div>
 <% end %>

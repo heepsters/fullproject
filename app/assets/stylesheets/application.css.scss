@@ -13,18 +13,25 @@
  *= require_tree .
  *= require_self
  */
+@import "font-awesome";
 @import 'bootstrap';
 @import 'bootstrap-datetimepicker';
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 html {
 	height:100%;
 	margin:0;
 	padding:0;
 }
 body {
+	position: fixed;
+	width: 100%;
+	top: 0;
 	background-color: #fff;
 	height:100%;
 	margin:0;
 	padding:0;
+	font-family: 'Raleway', sans-serif;
+
 }
 #wrapper {
 	min-height: 100%;
@@ -53,15 +60,59 @@ nav.navbar.navbar-default.navbar-fixed-top {
 		margin-top: 20px;
 	}
 }
-.banner {
-	margin-top: 100px;
+p#notice {
+	position: absolute;
+	bottom: 10px;
+	right: 5px;
+	width: 250px;
+	height: 50px;
+	color: rgb(66, 244, 223);
+}
+.profile_history {
+	position: absolute;
+	margin-top: 10px;
+	width: 100%;
+	padding: 0 20px;
+}
+h3.banner {
+	margin-top: 120px;
 	width: 100%;
 	padding: 10px 0;
 	background-color: #E93434;
 	color: #fff;
 	text-align: center;
-	box-shadow: 5px 2px 33px solid #000;
+	box-shadow: 1px 3px 5px #666;
 }
+table {
+	width: 100%;
+}
+tbody {
+	width: 100%;
+}
+tr {
+	display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    margin: auto;
+}
+tr td.barbers_list {
+	margin: 20px;
+	text-align: center;
+	a {
+		font-size: 19px;
+		color: #000;
+	}
+	.custom a:hover {
+		background-color: none;
+	}
+}
+img.barber_head {
+	width: 160px;
+	height: 160px;
+	border-radius: 100%;
+	box-shadow: 1px 3px 5px #666;
+}
+
 footer#footer {
 	position: absolute;
 	bottom: -170px;
@@ -82,26 +133,44 @@ footer#footer {
     font-size: 20px;
 }
 .logoimg {
-	position: absolute;
+	position: fixed;
+	width: 100%;
 	top: 0;
 	left: 0;
-	width: 100%;
-	height: 731px;
+	height: 100%;
 	text-align: center;
-	background-color: rgba(0, 0, 0, 0.8);
+	background-color: rgba(74, 144, 266, 0.55);
 	img {
-		width: 370px;
-		margin: 13em 0 2em;
+		width: 190px;
+		margin: 5em 0 0;
 	}
 }
+.logoimg1 {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	height: 100%;
+	text-align: center;
+	color: #fff;
+	background-color: rgba(206, 122, 122, 0.75);
+	img {
+		width: 190px;
+		margin: 3em 0 0;
+
+	}
+}
+.logoimg1 h2 {
+	color: #fff;
+}
 .backgroundpic {
-	height: 641px;
 	width: 100%;
 	text-align: center;
+	top: 0;
 }
 .backgroundpic img {
-	position: absolute;
-	width: 100%;
+	position: fixed;
+	height: 100%;
 	margin: 0;
 	border: 0;
 	top: 0;
@@ -109,20 +178,112 @@ footer#footer {
 	z-index: -1;
 	height: 801px;
 }
-
-h4#homelink.text-center{
+.backgroundpic1 {
+	width: 100%;
+	text-align: center;
+	top: 0;
+	position: fixed;
+}
+.backgroundpic1 img {
+	position: fixed;
+	width: 1280px;
 	margin: 0;
-	a.btn.btn-default.btn-lg {
-		border-radius: 0;
-		border: 1px solid #fff;
-		background-color: inherit;
+	border: 0;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	height: 801px;
+}
+textarea, textarea.form-control, input.form-control, input[type=text], input[type=password], input[type=email], input[type=number], [type=text].form-control, [type=password].form-control, [type=email].form-control, [type=tel].form-control, [contenteditable].form-control {
+    padding: 5px 20px;
+    border: none;
+    border-radius: 100px;
+    -webkit-appearance: none;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0, 0.50);
+    font-size: 16px;
+    width: 350px;
+    text-align: center;
+    background-color: rgba(216, 216, 216, 0.9);
+    outline: none;
+}
+div.field, div.actions {
+    margin-bottom: 20px;
+}
+.actions input{
+    width: 350px;
+    border-radius: 100px;
+    color: #fff;
+    font-size: 17px;
+    background-color: rgba(10, 219, 73, 0.9);
+    outline: none;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0, 0.50);
+}
+.devise_link a {
+	background: #50E3C2;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0, 0.50);
+    border-radius: 100px;
+    width: 300px;
+    padding: 7px 35px;
+    color: #fff;
+    font-size: 17px;
+    text-decoration: none;
+}
+.devise_link a:hover {
+	border-radius: 3px;
+	background-color: rgba(74, 144, 226, 0.8)
+}
+h4#homelink.text-center{
+	margin: 50px 0 0;
+	width: 100%;
+	padding: 20px 0;
+	background-color: rgba(255, 58, 58, 0.71);
+	font-size: 64px;
+	a {
 		color: #fff;
-		font-size: 25px;
-		padding: 10px 22px;
+	}
+	a:hover {
+		text-decoration: none;
+		background-color: none !important;
 	}
 }
+.btnlocation {
+	width: 100%;
+	text-align: center;
+	margin-top: 525px;
+}
+a.btn.btn-default.btn-lg {
+	/* Rectangle 2: */
+	background: rgba(10, 219, 73, 0.71);
+	width: 280px;
+	padding: 12px 0;
+	color: #fff;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+	border-radius: 100px;
+}
 a.btn.btn-default.btn-lg:hover {
-	background-color: rgba(226, 20, 20, 0.65) !important;
+	background: rgba(255, 58, 58, 0.98);
+	border-radius: 10px;
+}
+.btnlocation1 {
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+	a.btn.btn-default.btn-lg {
+	/* Rectangle 2: */
+	background: #4A90E2;
+	width: 280px;
+	padding: 12px 0;
+	color: #fff;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+	border-radius: 100px;
+	}
+	a.btn.btn-default.btn-lg:hover {
+	background: rgba(255, 58, 58, 0.98);
+	border-radius: 10px;
+	}
+}
+.field input #client_avatar {
+	width: 100%;
 }
 #notice-wrapper {
 	position: absolute;

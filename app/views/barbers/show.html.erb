@@ -1,16 +1,28 @@
+
 <p id="notice"><%= notice %></p>
+<div class="profile_history">
 <% if client_signed_in? %>
   <p>
-    <%= link_to 'My Profile', client_path(id: current_client) %>
-    <%= link_to 'My History', history_path(id: current_client), class: "pull-right" %>
+    <%= link_to client_path(id: current_client) do %>
+      <%= fa_icon "user-circle-o 3x", class: "pull-left" %>
+    <% end -%>
+    <%= link_to history_path(id: current_client) do %>
+      <%= fa_icon "clock-o 3x", class: "pull-right" %>
+    <% end -%>
   </p> 
 <% end -%>
 <% if barber_signed_in? %>
   <p>
-    <%= link_to 'My Profile', barber_path(id: current_barber) %>
-    <%= link_to 'My History', clients_path(id: current_barber), class: "pull-right" %>
+    <%= link_to barber_path(id: current_barber) do %>
+      <%= fa_icon "user-circle-o 3x", class: "pull-left" %>
+    <% end -%>
+    <%= link_to clients_path(id: current_barber) do %>
+      <%= fa_icon "clock-o 3x", class: "pull-right" %>
+    <% end -%>
   </p> 
-<% end -%>
+<% end %>
+</div>
+
 <div class="page_logo">
   <%= image_tag("redslogo.png") %>
 </div>
@@ -25,35 +37,25 @@
 <h1>
 	<%= @barber.first_name %>
 </h1>
-<p>
-  <strong>Last name:</strong>
-  <%= @barber.last_name %>
-</p>
-<p>
-  <strong>Phone:</strong>
-  <%= @barber.phone %>
-</p>
-<p>
-  <strong>Email:</strong>
-  <%= @barber.email %>
-</p>
 
 <table>
   <tbody>
     <% @openings.each do |o| %>
       <tr>
-      <% if client_signed_in? %>
+      <% if client_signed_in? or barber_signed_in? %>
         <td><%= link_to o.opening.strftime("%A, %B %d, %Y - %I:%M %P"), appointments_path(barber_id: o.barber.id, client_id: current_client, opening_id: o.id), method: :post %></td>
       <% else %>
         <td><%= link_to 'Sign In To See Openings', new_client_registration_path %></td>
+        <td><%= link_to 'Edit', edit_opening_path %></td>
+
       <% end -%>
       </tr>
     <% end %>
   </tbody>
 </table>
 <br>
-<br>
-<div class="step_1">
+
+<!-- <div class="step_1">
   <h4><%= link_to "Choose Barber", barbers_path %></h4>
 </div>
 <div class="step_2">
@@ -61,9 +63,8 @@
 </div>
 <div class="step_3">
   <h4>Reserve</h4>
-</div>
+</div> -->
 
-<%= link_to 'Back', barbers_path %> 
 <br>
 <% if barber_signed_in? %>
 <%= link_to('Logout', destroy_client_session_path, :method => :delete) %>  

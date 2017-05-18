@@ -1,41 +1,45 @@
-<%= form_for(client) do |f| %>
-  <% if client.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
-      <ul>
-      <% client.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<div class="backgroundpic1">
+  <%= image_tag("slcnight.jpg") %>
+</div>
+
+<div class="logoimg1">
+  <%= image_tag("redslogo.png") %>
+    <%= form_for(client) do |f| %>
+      <% if client.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
+          <ul>
+          <% client.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <br>
-  <div class="field">
-      <%= f.file_field :avatar %>
-  </div>
+      <div class="field">
+          <%= f.file_field :avatar %>
+      </div>
 
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
+      <div class="field">
+        <%= f.text_field :first_name, placeholder: :first_name %>
+      </div>
 
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
+      <div class="field">
+        <%= f.text_field :last_name, placeholder: :last_name %>
+      </div>
 
-  <div class="field">
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
-  </div>
+      <div class="field">
+        <%= f.text_field :phone, placeholder: :phone %>
+      </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
+      <div class="field">
+        <%= f.text_field :email, placeholder: :email %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit %>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+    <%= link_to "Change Password", edit_client_registration_path %>
   </div>
-<% end %>
+</div>
